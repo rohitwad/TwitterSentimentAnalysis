@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+    <title>Home</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/styles.css') }}">
+</head>
+    
+<body>
+     <div class="Details">
+         <h2><b>Twitter Sentiment Analysis</b></h2>
+
+         <table style="width:25%" border:1px solid black>
+             <form action="/predict"method="post">
+                <tr> 
+                    <th><label >Enter Keyword :</label></th>
+                    <th><input type="text" name="Keyword1" required="required" /></th>
+                </tr>
+                <tr> 
+                    <th><label >No. of Tweets :</label></th>
+                    <th><input type="text" name="noofTweets1" required="required" /></th>
+                </tr>
+                <tr><th><button type="submit" class="btn btn-primary btn-block btn-large">Get Tweets and Sentiment of each Tweet</button></th></tr>
+             </form>        
+        </table>
+        {{ prediction_text }}
+    </div>
+</body>
+</html>
